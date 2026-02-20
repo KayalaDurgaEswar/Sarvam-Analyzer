@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API = (import.meta.env.VITE_API_URL || 'http://localhost:5001').replace(/\/$/, '')
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' })

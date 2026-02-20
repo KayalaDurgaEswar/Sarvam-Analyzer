@@ -3,7 +3,7 @@ import axios from 'axios'
 import { BarChart3, Building2, Wallet, Users, Package, CreditCard, ClipboardList, TrendingUp, Target, Settings, DollarSign, Activity, AlertTriangle } from 'lucide-react'
 import DashboardLayout from '../../components/DashboardLayout'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API = (import.meta.env.VITE_API_URL || 'http://localhost:5001').replace(/\/$/, '')
 const getToken = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
 const menuItems = [
     { label: 'Overview', items: [{ name: 'Dashboard', path: '/master', icon: <BarChart3 size={18} /> }, { name: 'Branches', path: '/master/branches', icon: <Building2 size={18} /> }, { name: 'Profit & Loss', path: '/master/profit', icon: <Wallet size={18} /> }] },

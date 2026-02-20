@@ -7,7 +7,7 @@ import DashboardLayout from '../../components/DashboardLayout'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend)
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API = (import.meta.env.VITE_API_URL || 'http://localhost:5001').replace(/\/$/, '')
 const getToken = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
 const menuItems = [
     { label: 'Overview', items: [{ name: 'Dashboard', path: '/master', icon: <BarChart3 size={18} /> }, { name: 'Branches', path: '/master/branches', icon: <Building2 size={18} /> }, { name: 'Profit & Loss', path: '/master/profit', icon: <Wallet size={18} /> }] },

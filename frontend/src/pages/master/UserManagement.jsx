@@ -3,7 +3,7 @@ import axios from 'axios'
 import { BarChart3, Building2, Wallet, Users, Package, CreditCard, ClipboardList, TrendingUp, Target, Settings, Plus, Search, Trash2, Power, UserPlus, X, AlertCircle } from 'lucide-react'
 import DashboardLayout from '../../components/DashboardLayout'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API = (import.meta.env.VITE_API_URL || 'http://localhost:5001').replace(/\/$/, '')
 const getToken = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
 
 const menuItems = [

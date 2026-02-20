@@ -7,7 +7,7 @@ import DashboardLayout from '../../components/DashboardLayout'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Title, Tooltip, Legend, ArcElement, Filler)
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API = (import.meta.env.VITE_API_URL || 'http://localhost:5001').replace(/\/$/, '')
 const getToken = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
 
 const menuItems = [

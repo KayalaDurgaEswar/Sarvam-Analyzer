@@ -4,7 +4,7 @@ import DashboardLayout from '../../components/DashboardLayout'
 
 import { BarChart3, ShoppingCart, Package, ClipboardList } from 'lucide-react'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API = (import.meta.env.VITE_API_URL || 'http://localhost:5001').replace(/\/$/, '')
 const getToken = () => ({ headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
 const menuItems = [{
     label: '', items: [
